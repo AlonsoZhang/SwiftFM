@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9D613286A75C3C839EBB51B /* Pods_SwiftFM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F456E9E9B7645471F479E28D /* Pods_SwiftFM.framework */; };
+		E2061C811E0111710077B5CE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E2061C801E0111710077B5CE /* Podfile */; };
 		E2BED3711DFE701F001A22C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BED3701DFE701F001A22C2 /* AppDelegate.swift */; };
 		E2BED3731DFE701F001A22C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BED3721DFE701F001A22C2 /* ViewController.swift */; };
 		E2BED3761DFE701F001A22C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2BED3741DFE701F001A22C2 /* Main.storyboard */; };
@@ -15,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3CFF43B7FDE46D8062BDB189 /* Pods-SwiftFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftFM/Pods-SwiftFM.debug.xcconfig"; sourceTree = "<group>"; };
+		815F7213ECCBAB2DF11A303D /* Pods-SwiftFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftFM/Pods-SwiftFM.release.xcconfig"; sourceTree = "<group>"; };
+		E2061C801E0111710077B5CE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		E2BED36D1DFE701F001A22C2 /* SwiftFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2BED3701DFE701F001A22C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2BED3721DFE701F001A22C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		E2BED3771DFE701F001A22C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2BED37A1DFE701F001A22C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2BED37C1DFE701F001A22C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F456E9E9B7645471F479E28D /* Pods_SwiftFM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftFM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D613286A75C3C839EBB51B /* Pods_SwiftFM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		729E3316A59574E0D6575802 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F456E9E9B7645471F479E28D /* Pods_SwiftFM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C34565D3C9C0004AB4E5803 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3CFF43B7FDE46D8062BDB189 /* Pods-SwiftFM.debug.xcconfig */,
+				815F7213ECCBAB2DF11A303D /* Pods-SwiftFM.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E2BED3641DFE701F001A22C2 = {
 			isa = PBXGroup;
 			children = (
+				E2061C801E0111710077B5CE /* Podfile */,
 				E2BED36F1DFE701F001A22C2 /* SwiftFM */,
 				E2BED36E1DFE701F001A22C2 /* Products */,
+				7C34565D3C9C0004AB4E5803 /* Pods */,
+				729E3316A59574E0D6575802 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2BED37F1DFE701F001A22C2 /* Build configuration list for PBXNativeTarget "SwiftFM" */;
 			buildPhases = (
+				6644A4D838F3EC46B1783296 /* [CP] Check Pods Manifest.lock */,
 				E2BED3691DFE701F001A22C2 /* Sources */,
 				E2BED36A1DFE701F001A22C2 /* Frameworks */,
 				E2BED36B1DFE701F001A22C2 /* Resources */,
+				16BE0FB44E35ADA525E286CB /* [CP] Embed Pods Frameworks */,
+				3A8B0340283BA224014AC0AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,11 +156,60 @@
 			files = (
 				E2BED37B1DFE701F001A22C2 /* LaunchScreen.storyboard in Resources */,
 				E2BED3781DFE701F001A22C2 /* Assets.xcassets in Resources */,
+				E2061C811E0111710077B5CE /* Podfile in Resources */,
 				E2BED3761DFE701F001A22C2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16BE0FB44E35ADA525E286CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftFM/Pods-SwiftFM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A8B0340283BA224014AC0AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftFM/Pods-SwiftFM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6644A4D838F3EC46B1783296 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E2BED3691DFE701F001A22C2 /* Sources */ = {
@@ -257,6 +336,7 @@
 		};
 		E2BED3801DFE701F001A22C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CFF43B7FDE46D8062BDB189 /* Pods-SwiftFM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8LP5KW6GHL;
@@ -270,6 +350,7 @@
 		};
 		E2BED3811DFE701F001A22C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 815F7213ECCBAB2DF11A303D /* Pods-SwiftFM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8LP5KW6GHL;
@@ -300,6 +381,7 @@
 				E2BED3811DFE701F001A22C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
