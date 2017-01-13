@@ -9,17 +9,27 @@
 /* Begin PBXBuildFile section */
 		C9D613286A75C3C839EBB51B /* Pods_SwiftFM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F456E9E9B7645471F479E28D /* Pods_SwiftFM.framework */; };
 		E2061C811E0111710077B5CE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E2061C801E0111710077B5CE /* Podfile */; };
+		E234AD3B1E289E6B00FCBD73 /* EkoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234AD3A1E289E6B00FCBD73 /* EkoImage.swift */; };
+		E234AD3D1E289E7500FCBD73 /* EkoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234AD3C1E289E7500FCBD73 /* EkoButton.swift */; };
+		E234AD3F1E289E7F00FCBD73 /* CollectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234AD3E1E289E7F00FCBD73 /* CollectButton.swift */; };
 		E2BED3711DFE701F001A22C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BED3701DFE701F001A22C2 /* AppDelegate.swift */; };
 		E2BED3731DFE701F001A22C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BED3721DFE701F001A22C2 /* ViewController.swift */; };
 		E2BED3761DFE701F001A22C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2BED3741DFE701F001A22C2 /* Main.storyboard */; };
 		E2BED3781DFE701F001A22C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2BED3771DFE701F001A22C2 /* Assets.xcassets */; };
 		E2BED37B1DFE701F001A22C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2BED3791DFE701F001A22C2 /* LaunchScreen.storyboard */; };
+		E2F64C261E25FBDB00C27669 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F64C251E25FBDB00C27669 /* SwiftNotice.swift */; };
+		E2F64C281E2604B500C27669 /* OrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F64C271E2604B500C27669 /* OrderButton.swift */; };
+		E2F64C2A1E2604D800C27669 /* ChannelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F64C291E2604D800C27669 /* ChannelController.swift */; };
+		E2F64C2C1E2604E000C27669 /* HTTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F64C2B1E2604E000C27669 /* HTTPController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3CFF43B7FDE46D8062BDB189 /* Pods-SwiftFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftFM/Pods-SwiftFM.debug.xcconfig"; sourceTree = "<group>"; };
 		815F7213ECCBAB2DF11A303D /* Pods-SwiftFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftFM/Pods-SwiftFM.release.xcconfig"; sourceTree = "<group>"; };
-		E2061C801E0111710077B5CE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		E2061C801E0111710077B5CE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E234AD3A1E289E6B00FCBD73 /* EkoImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkoImage.swift; sourceTree = "<group>"; };
+		E234AD3C1E289E7500FCBD73 /* EkoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkoButton.swift; sourceTree = "<group>"; };
+		E234AD3E1E289E7F00FCBD73 /* CollectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectButton.swift; sourceTree = "<group>"; };
 		E2BED36D1DFE701F001A22C2 /* SwiftFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2BED3701DFE701F001A22C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2BED3721DFE701F001A22C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +37,10 @@
 		E2BED3771DFE701F001A22C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2BED37A1DFE701F001A22C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2BED37C1DFE701F001A22C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2F64C251E25FBDB00C27669 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
+		E2F64C271E2604B500C27669 /* OrderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderButton.swift; sourceTree = "<group>"; };
+		E2F64C291E2604D800C27669 /* ChannelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelController.swift; sourceTree = "<group>"; };
+		E2F64C2B1E2604E000C27669 /* HTTPController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPController.swift; sourceTree = "<group>"; };
 		F456E9E9B7645471F479E28D /* Pods_SwiftFM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftFM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,8 +95,15 @@
 		E2BED36F1DFE701F001A22C2 /* SwiftFM */ = {
 			isa = PBXGroup;
 			children = (
+				E2F64C251E25FBDB00C27669 /* SwiftNotice.swift */,
 				E2BED3701DFE701F001A22C2 /* AppDelegate.swift */,
+				E2F64C271E2604B500C27669 /* OrderButton.swift */,
 				E2BED3721DFE701F001A22C2 /* ViewController.swift */,
+				E2F64C291E2604D800C27669 /* ChannelController.swift */,
+				E2F64C2B1E2604E000C27669 /* HTTPController.swift */,
+				E234AD3A1E289E6B00FCBD73 /* EkoImage.swift */,
+				E234AD3C1E289E7500FCBD73 /* EkoButton.swift */,
+				E234AD3E1E289E7F00FCBD73 /* CollectButton.swift */,
 				E2BED3741DFE701F001A22C2 /* Main.storyboard */,
 				E2BED3771DFE701F001A22C2 /* Assets.xcassets */,
 				E2BED3791DFE701F001A22C2 /* LaunchScreen.storyboard */,
@@ -216,8 +237,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2F64C281E2604B500C27669 /* OrderButton.swift in Sources */,
+				E2F64C261E25FBDB00C27669 /* SwiftNotice.swift in Sources */,
 				E2BED3731DFE701F001A22C2 /* ViewController.swift in Sources */,
+				E2F64C2C1E2604E000C27669 /* HTTPController.swift in Sources */,
+				E2F64C2A1E2604D800C27669 /* ChannelController.swift in Sources */,
+				E234AD3D1E289E7500FCBD73 /* EkoButton.swift in Sources */,
+				E234AD3F1E289E7F00FCBD73 /* CollectButton.swift in Sources */,
 				E2BED3711DFE701F001A22C2 /* AppDelegate.swift in Sources */,
+				E234AD3B1E289E6B00FCBD73 /* EkoImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
