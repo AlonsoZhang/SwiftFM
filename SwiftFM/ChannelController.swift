@@ -17,7 +17,7 @@ protocol ChannelProtocol{
 }
 
 
-class ChannelController: UIViewController ,UITableViewDelegate{
+class ChannelController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     //频道列表tableview组件
     @IBOutlet weak var tv: UITableView!
     
@@ -33,17 +33,20 @@ class ChannelController: UIViewController ,UITableViewDelegate{
         
     }
     
+    
     func editChannel(sender: UIBarButtonItem){
         self.isEditing = !self.isEditing
     }
     
     //配置tableview数据的行数
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return channelData.count
     }
+
     
     //配置cell的数据
-    private func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tv.dequeueReusableCell(withIdentifier: "channel")! as UITableViewCell
         //获取行数据
         let rowData:JSON = self.channelData[indexPath.row] as JSON

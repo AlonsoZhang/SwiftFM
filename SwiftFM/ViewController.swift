@@ -433,25 +433,16 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         
         if image == nil {
             //如果缓存中没有这张图片，就通过网络获取
-            print("pic")
-//            Alamofire.request(url).response{ (_, _, data, error) -> Void in
-//                //将获取的图像数据赋予imgView
-//                let img = UIImage(data: data!)
-//                imgView.image = img
-//                self.imageCache[url] = img
-//                if url.isEmpty{
-//                    imgView.image = UIImage(named: "thumb")
-//                }
-//            }
-//            Alamofire.request(Method.GET, url).response{ (_, _, data, error) -> Void in
-//                //将获取的图像数据赋予imgView
-//                let img = UIImage(data: data!)
-//                imgView.image = img
-//                self.imageCache[url] = img
-//                if url.isEmpty{
-//                    imgView.image = UIImage(named: "thumb")
-//                }
-//            }
+
+            Alamofire.request(url).response{ data in
+                //将获取的图像数据赋予imgView
+                let img = UIImage(data: data.data!)
+                imgView.image = img
+                self.imageCache[url] = img
+                if url.isEmpty{
+                    imgView.image = UIImage(named: "thumb")
+                }
+            }
         }else{
             //如果缓存中有，就直接用
             imgView.image = image!
@@ -523,7 +514,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         //self.noticeError("无网络连接", autoClear: true, autoClearTime: nil)
     }
     
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         songarray = []
         songid = ""
         listchoose = 0
@@ -539,6 +530,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     func onChangeChannel(channel_id:String){
         //拼凑频道列表的歌曲数据网络地址
         //http://douban.fm/j/mine/playlist?type=n&channel= 频道id &from=mainsite
+        //print(self.channelData)
         let url:String = "http://fm.baidu.com/dev/api/?tn=playlist&special=flash&prepend=&format=json&_=1378945264366&id=\(channel_id)"
         eHttp.onSearch(url: url)
     }
@@ -550,7 +542,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     func loadLovelist(){
         channelname.text = "我的最爱"
         //let count = dataSource.count
-        print(dataSource)
+        //print(dataSource)
         for (index,_) in dataSource.enumerated(){
             if index == 0 {
                 songid = dataSource[0] as! String
@@ -559,7 +551,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
             }
         }
         
-        print(songid)
+        //print(songid)
         let url:String = "http://music.baidu.com/data/music/fmlink?type=mp3&rate=1&format=json&songIds=\(songid)"
         eHttp.onSearch(url: url)
         self.tv.reloadData()
