@@ -1,12 +1,10 @@
-platform :ios, '10.2'
+platform :ios, '10.3'
 
 target 'SwiftFM' do
 
-pod 'Alamofire'
+pod 'Alamofire','~> 4.7'
 
-pod 'SwiftyJSON'
-
-pod 'UzysAnimatedGifLoadMore'
+pod 'SwiftyJSON','~> 4.0'
 
 use_frameworks!
 

@@ -1,21 +1,20 @@
 PODS:
-  - Alamofire (4.0.1)
-  - AnimatedGIFImageSerialization (0.2.0)
-  - SwiftyJSON (3.1.0)
-  - UzysAnimatedGifLoadMore (0.9.4):
-    - AnimatedGIFImageSerialization (~> 0.2.0)
+  - Alamofire (4.7.1)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
-  - Alamofire
-  - SwiftyJSON
-  - UzysAnimatedGifLoadMore
+  - Alamofire (~> 4.7)
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  AnimatedGIFImageSerialization: b0f0cfe71eac1ee45a3d57ae533c23b8e6f29501
-  SwiftyJSON: 29b9f2a64f118c07e691667c2ba1efe536acfe0b
-  UzysAnimatedGifLoadMore: 26e88214fe66a309c8dedde89f8d3510160a0d23
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 9b58e8632305d5f97e81663f7d92c6e6a30b59ec
+PODFILE CHECKSUM: 2aaebe6404f9fa5fd31d323515fbfa126cb2f55f
 
-COCOAPODS: 1.2.0.beta.3
+COCOAPODS: 1.5.0

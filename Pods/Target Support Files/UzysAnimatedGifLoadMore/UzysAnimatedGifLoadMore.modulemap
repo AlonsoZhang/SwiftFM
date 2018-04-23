@@ -1,6 +1,0 @@
-framework module UzysAnimatedGifLoadMore {
-  umbrella header "UzysAnimatedGifLoadMore-umbrella.h"
-
-  export *
-  module * { export * }
-}

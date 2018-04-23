@@ -12,10 +12,10 @@
 		E234AD3B1E289E6B00FCBD73 /* EkoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234AD3A1E289E6B00FCBD73 /* EkoImage.swift */; };
 		E234AD3D1E289E7500FCBD73 /* EkoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234AD3C1E289E7500FCBD73 /* EkoButton.swift */; };
 		E234AD3F1E289E7F00FCBD73 /* CollectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234AD3E1E289E7F00FCBD73 /* CollectButton.swift */; };
+		E29F6D03208DA8FE00F8BE85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E29F6D02208DA8FE00F8BE85 /* Assets.xcassets */; };
 		E2BED3711DFE701F001A22C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BED3701DFE701F001A22C2 /* AppDelegate.swift */; };
 		E2BED3731DFE701F001A22C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BED3721DFE701F001A22C2 /* ViewController.swift */; };
 		E2BED3761DFE701F001A22C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2BED3741DFE701F001A22C2 /* Main.storyboard */; };
-		E2BED3781DFE701F001A22C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2BED3771DFE701F001A22C2 /* Assets.xcassets */; };
 		E2BED37B1DFE701F001A22C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2BED3791DFE701F001A22C2 /* LaunchScreen.storyboard */; };
 		E2F64C261E25FBDB00C27669 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F64C251E25FBDB00C27669 /* SwiftNotice.swift */; };
 		E2F64C281E2604B500C27669 /* OrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F64C271E2604B500C27669 /* OrderButton.swift */; };
@@ -30,11 +30,11 @@
 		E234AD3A1E289E6B00FCBD73 /* EkoImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkoImage.swift; sourceTree = "<group>"; };
 		E234AD3C1E289E7500FCBD73 /* EkoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkoButton.swift; sourceTree = "<group>"; };
 		E234AD3E1E289E7F00FCBD73 /* CollectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectButton.swift; sourceTree = "<group>"; };
+		E29F6D02208DA8FE00F8BE85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2BED36D1DFE701F001A22C2 /* SwiftFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2BED3701DFE701F001A22C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2BED3721DFE701F001A22C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E2BED3751DFE701F001A22C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E2BED3771DFE701F001A22C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2BED37A1DFE701F001A22C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2BED37C1DFE701F001A22C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2F64C251E25FBDB00C27669 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				E234AD3C1E289E7500FCBD73 /* EkoButton.swift */,
 				E234AD3E1E289E7F00FCBD73 /* CollectButton.swift */,
 				E2BED3741DFE701F001A22C2 /* Main.storyboard */,
-				E2BED3771DFE701F001A22C2 /* Assets.xcassets */,
+				E29F6D02208DA8FE00F8BE85 /* Assets.xcassets */,
 				E2BED3791DFE701F001A22C2 /* LaunchScreen.storyboard */,
 				E2BED37C1DFE701F001A22C2 /* Info.plist */,
 			);
@@ -124,7 +124,6 @@
 				E2BED36A1DFE701F001A22C2 /* Frameworks */,
 				E2BED36B1DFE701F001A22C2 /* Resources */,
 				16BE0FB44E35ADA525E286CB /* [CP] Embed Pods Frameworks */,
-				3A8B0340283BA224014AC0AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,8 +175,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2BED37B1DFE701F001A22C2 /* LaunchScreen.storyboard in Resources */,
-				E2BED3781DFE701F001A22C2 /* Assets.xcassets in Resources */,
 				E2061C811E0111710077B5CE /* Podfile in Resources */,
+				E29F6D03208DA8FE00F8BE85 /* Assets.xcassets in Resources */,
 				E2BED3761DFE701F001A22C2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,28 +190,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftFM/Pods-SwiftFM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftFM/Pods-SwiftFM-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3A8B0340283BA224014AC0AC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftFM/Pods-SwiftFM-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6644A4D838F3EC46B1783296 /* [CP] Check Pods Manifest.lock */ = {
@@ -221,13 +210,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftFM-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -375,6 +367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = space.zhangwu.SwiftFM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -389,6 +382,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = space.zhangwu.SwiftFM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
