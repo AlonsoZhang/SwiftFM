@@ -13,40 +13,40 @@ private let sn_topBar: Int = 1001
 
 extension UIResponder {
     /// wait with your own animated images
-    @discardableResult
+    @objc @discardableResult
     func pleaseWaitWithImages(_ imageNames: Array<UIImage>, timeInterval: Int) -> UIWindow{
         return SwiftNotice.wait(imageNames, timeInterval: timeInterval)
     }
     // api changed from v3.3
-    @discardableResult
+    @objc @discardableResult
     func noticeTop(_ text: String, autoClear: Bool = true, autoClearTime: Int = 1) -> UIWindow{
         return SwiftNotice.noticeOnStatusBar(text, autoClear: autoClear, autoClearTime: autoClearTime)
     }
     
     // new apis from v3.3
-    @discardableResult
+    @objc @discardableResult
     func noticeSuccess(_ text: String, autoClear: Bool = false, autoClearTime: Int = 3) -> UIWindow{
         return SwiftNotice.showNoticeWithText(NoticeType.success, text: text, autoClear: autoClear, autoClearTime: autoClearTime)
     }
-    @discardableResult
+    @objc @discardableResult
     func noticeError(_ text: String, autoClear: Bool = false, autoClearTime: Int = 3) -> UIWindow{
         return SwiftNotice.showNoticeWithText(NoticeType.error, text: text, autoClear: autoClear, autoClearTime: autoClearTime)
     }
-    @discardableResult
+    @objc @discardableResult
     func noticeInfo(_ text: String, autoClear: Bool = false, autoClearTime: Int = 3) -> UIWindow{
         return SwiftNotice.showNoticeWithText(NoticeType.info, text: text, autoClear: autoClear, autoClearTime: autoClearTime)
     }
     
     // old apis
-    @discardableResult
+    @objc @discardableResult
     func successNotice(_ text: String, autoClear: Bool = true) -> UIWindow{
         return SwiftNotice.showNoticeWithText(NoticeType.success, text: text, autoClear: autoClear, autoClearTime: 3)
     }
-    @discardableResult
+    @objc @discardableResult
     func errorNotice(_ text: String, autoClear: Bool = true) -> UIWindow{
         return SwiftNotice.showNoticeWithText(NoticeType.error, text: text, autoClear: autoClear, autoClearTime: 3)
     }
-    @discardableResult
+    @objc @discardableResult
     func infoNotice(_ text: String, autoClear: Bool = true) -> UIWindow{
         return SwiftNotice.showNoticeWithText(NoticeType.info, text: text, autoClear: autoClear, autoClearTime: 3)
     }
@@ -54,15 +54,15 @@ extension UIResponder {
     func notice(_ text: String, type: NoticeType, autoClear: Bool, autoClearTime: Int = 3) -> UIWindow{
         return SwiftNotice.showNoticeWithText(type, text: text, autoClear: autoClear, autoClearTime: autoClearTime)
     }
-    @discardableResult
+    @objc @discardableResult
     func pleaseWait() -> UIWindow{
         return SwiftNotice.wait()
     }
-    @discardableResult
+    @objc @discardableResult
     func noticeOnlyText(_ text: String) -> UIWindow{
         return SwiftNotice.showText(text)
     }
-    func clearAllNotice() {
+    @objc func clearAllNotice() {
         SwiftNotice.clear()
     }
 }
@@ -76,13 +76,13 @@ enum NoticeType{
 class SwiftNotice: NSObject {
     
     static var windows = Array<UIWindow?>()
-    static let rv = UIApplication.shared.keyWindow?.subviews.first as UIView?
-    static var timer: DispatchSource!
-    static var timerTimes = 0
+    @objc static let rv = UIApplication.shared.keyWindow?.subviews.first as UIView?
+    @objc static var timer: DispatchSource!
+    @objc static var timerTimes = 0
     
     /* just for iOS 8
      */
-    static var degree: Double {
+    @objc static var degree: Double {
         get {
             return [0, 0, 180, 270, 90][UIApplication.shared.statusBarOrientation.hashValue] as Double
         }
@@ -90,7 +90,7 @@ class SwiftNotice: NSObject {
     
     // fix https://github.com/johnlui/SwiftNotice/issues/2
     // thanks broccolii(https://github.com/broccolii) and his PR https://github.com/johnlui/SwiftNotice/pull/5
-    static func clear() {
+    @objc static func clear() {
         self.cancelPreviousPerformRequests(withTarget: self)
         if let _ = timer {
             timer.cancel()
@@ -100,7 +100,7 @@ class SwiftNotice: NSObject {
         windows.removeAll(keepingCapacity: false)
     }
     
-    @discardableResult
+    @objc @discardableResult
     static func noticeOnStatusBar(_ text: String, autoClear: Bool, autoClearTime: Int) -> UIWindow{
         let frame = UIApplication.shared.statusBarFrame
         let window = UIWindow()
@@ -154,7 +154,7 @@ class SwiftNotice: NSObject {
         return window
     }
     
-    @discardableResult
+    @objc @discardableResult
     static func wait(_ imageNames: Array<UIImage> = Array<UIImage>(), timeInterval: Int = 0) -> UIWindow {
         let frame = CGRect(x: 0, y: 0, width: 78, height: 78)
         let window = UIWindow()
@@ -170,8 +170,7 @@ class SwiftNotice: NSObject {
                 iv.contentMode = UIViewContentMode.scaleAspectFit
                 mainView.addSubview(iv)
                 timer = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags(rawValue: UInt(0)), queue: DispatchQueue.main) as! DispatchSource
-                timer.scheduleRepeating(deadline: DispatchTime.now(), interval: DispatchTimeInterval.milliseconds(timeInterval))
-                //timer.schedule(deadline: DispatchTime.now(), repeating: DispatchTimeInterval.milliseconds(timeInterval))
+                timer.schedule(deadline: DispatchTime.now(), repeating: DispatchTimeInterval.milliseconds(timeInterval))
                 timer.setEventHandler(handler: { () -> Void in
                     let name = imageNames[timerTimes % imageNames.count]
                     iv.image = name
@@ -210,7 +209,7 @@ class SwiftNotice: NSObject {
         return window
     }
     
-    @discardableResult
+    @objc @discardableResult
     static func showText(_ text: String, autoClear: Bool=true, autoClearTime: Int=2) -> UIWindow {
         let window = UIWindow()
         window.backgroundColor = UIColor.clear
@@ -313,7 +312,7 @@ class SwiftNotice: NSObject {
     }
     
     // just for iOS 8
-    static func getRealCenter() -> CGPoint {
+    @objc static func getRealCenter() -> CGPoint {
         if UIApplication.shared.statusBarOrientation.hashValue >= 3 {
             return CGPoint(x: rv!.center.y, y: rv!.center.x)
         } else {
@@ -410,7 +409,7 @@ class SwiftNoticeSDK {
 }
 
 extension UIWindow{
-    func hide(){
+    @objc func hide(){
         SwiftNotice.hideNotice(self)
     }
 }

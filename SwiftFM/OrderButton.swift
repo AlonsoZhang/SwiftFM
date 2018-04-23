@@ -9,18 +9,18 @@
 import UIKit
 
 class OrderButton: UIButton {
-    var order:Int = 1
+    @objc var order:Int = 1
     
-    let order1:UIImage = UIImage(named: "order1")!
-    let order2:UIImage = UIImage(named: "order2")!
-    let order3:UIImage = UIImage(named: "order3")!
+    @objc let order1:UIImage = UIImage(named: "order1")!
+    @objc let order2:UIImage = UIImage(named: "order2")!
+    @objc let order3:UIImage = UIImage(named: "order3")!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.addTarget(self, action: #selector(OrderButton.onClick(sender:)), for: UIControlEvents.touchUpInside)
     }
     
-    func onClick(sender:UIButton){
+    @objc func onClick(sender:UIButton){
         order += 1
         if order == 1{
             self.setImage(order1, for: UIControlState.normal)

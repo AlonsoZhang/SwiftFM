@@ -34,7 +34,7 @@ class ChannelController: UIViewController ,UITableViewDelegate,UITableViewDataSo
     }
     
     
-    func editChannel(sender: UIBarButtonItem){
+    @objc func editChannel(sender: UIBarButtonItem){
         self.isEditing = !self.isEditing
     }
     

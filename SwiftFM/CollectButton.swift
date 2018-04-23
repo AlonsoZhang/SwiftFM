@@ -9,16 +9,16 @@
 import UIKit
 
 class CollectButton: UIButton {
-    var isCollect:Bool = true
-    let imgNoCollect:UIImage = UIImage(named: "heartgary")!
-    let imgCollect:UIImage = UIImage(named: "heartred")!
+    @objc var isCollect:Bool = true
+    @objc let imgNoCollect:UIImage = UIImage(named: "heartgary")!
+    @objc let imgCollect:UIImage = UIImage(named: "heartred")!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.addTarget(self, action: #selector(CollectButton.onClick), for: UIControlEvents.touchUpInside)
     }
     
-    func onClick(){
+    @objc func onClick(){
         isCollect = !isCollect
         if isCollect{
             self.setImage(imgNoCollect, for: UIControlState.normal)
@@ -27,12 +27,12 @@ class CollectButton: UIButton {
         }
     }
     
-    func collect(){
+    @objc func collect(){
         isCollect = true
         self.setImage(imgCollect, for: UIControlState.normal)
     }
     
-    func nocollect(){
+    @objc func nocollect(){
         isCollect = false
         self.setImage(imgNoCollect, for: UIControlState.normal)
     }

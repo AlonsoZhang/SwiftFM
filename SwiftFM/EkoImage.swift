@@ -22,13 +22,13 @@ class EkoImage: UIImageView {
     }
     
     //旋转
-    func onRotation(){
+    @objc func onRotation(){
         //动画实例关键字
         let animation = CABasicAnimation(keyPath: "transform.rotation")
         //初始值
         animation.fromValue = 0.0
         //结束值
-        animation.toValue = M_PI*2.0
+        animation.toValue = Double.pi*2.0
         //动画执行时间
         animation.duration = 20
         //动画重复次数

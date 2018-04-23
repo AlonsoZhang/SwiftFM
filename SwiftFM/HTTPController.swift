@@ -13,7 +13,7 @@ class HTTPController:NSObject{
     //定义一个代理
     var delegate:HttpProtocol?
     //接收网址，回调代理的方法传回数据
-    func onSearch(url:String){
+    @objc func onSearch(url:String){
 
         Alamofire.request(url).responseJSON(options: .mutableContainers) { (request) -> Void in
             if request.result.error == nil {

@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     @IBOutlet weak var channelname: UILabel!
     
     //网络操作类的实例
-    var eHttp:HTTPController = HTTPController()
+    @objc var eHttp:HTTPController = HTTPController()
     
     //定义一个变量，接收频道的列表数据
     var tableData:[JSON] = []
@@ -34,28 +34,28 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     var channelData:[JSON] = []
     
     //定义一个图片缓存的字典
-    var imageCache = Dictionary<String,UIImage>()
+    @objc var imageCache = Dictionary<String,UIImage>()
     
     //申明一个媒体播放器的实例
-    var audioPlayer:AVPlayer =  AVPlayer()
+    @objc var audioPlayer:AVPlayer =  AVPlayer()
     
     //申明一个计时器
-    var timer:Timer?
+    @objc var timer:Timer?
     
     //申明下拉刷新
-    var refreshControl = UIRefreshControl()
+    @objc var refreshControl = UIRefreshControl()
     
-    var filePath: String = ""
+    @objc var filePath: String = ""
     
-    var songid: String = ""
+    @objc var songid: String = ""
     
-    var onesongid: String = ""
+    @objc var onesongid: String = ""
     
-    var songarray:[String] = []
+    @objc var songarray:[String] = []
     
-    var listnum:Int = 1
+    @objc var listnum:Int = 1
     
-    var listchoose:Int = 0
+    @objc var listchoose:Int = 0
     
     @IBOutlet weak var progress: UIImageView!
     
@@ -75,7 +75,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     @IBOutlet weak var btnLove: CollectButton!
     
     //当前在播放第几首
-    var currIndex:Int = 0
+    @objc var currIndex:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -168,7 +168,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     //    }
     
     //长按手势
-    func handleLongpressGesture(sender : UILongPressGestureRecognizer){
+    @objc func handleLongpressGesture(sender : UILongPressGestureRecognizer){
         if sender.state == UIGestureRecognizerState.began{
             audioPlayer.pause()
         }
@@ -182,7 +182,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         }
     }
     
-    func refreshData() {
+    @objc func refreshData() {
         audioPlayer.pause()
         listchoose += 1
         let url:String = "http://music.baidu.com/data/music/fmlink?type=mp3&rate=1&format=json&songIds=\(songarray[listchoose])"
@@ -194,7 +194,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     
     //人为结束的三种情况 1 点击上一首，下一首按钮  2 选择了频道列表的时候  3 点击了歌曲列表中的某一行的时候
-    func playFinish(){
+    @objc func playFinish(){
         switch(btnOrder.order){
         case 1:
             //顺序播放
@@ -215,7 +215,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         }
     }
     
-    func onOrder(btn:OrderButton){
+    @objc func onOrder(btn:OrderButton){
         var message:String = ""
         switch(btn.order){
         case 1:
@@ -230,7 +230,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         self.noticeTop(message, autoClear: true, autoClearTime: 1)
     }
     
-    func onClick(btn:UIButton){
+    @objc func onClick(btn:UIButton){
         if btn == btnNext {
             currIndex += 1
             if currIndex > self.songData.count - 1 {
@@ -245,7 +245,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         onSelectRow(index: currIndex)
     }
     
-    func onPlay(btn:EkoButton){
+    @objc func onPlay(btn:EkoButton){
         if btn.isPlay{
             audioPlayer.play()
         }else{
@@ -258,7 +258,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         onPlay(btn: btnPlay)
     }
     
-    func onLove(btn:CollectButton){
+    @objc func onLove(btn:CollectButton){
         var message:String = ""
         if btn.isCollect{
             message = "已取消收藏"
@@ -330,7 +330,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     
     //选中了哪一行
-    func onSelectRow(index:Int){
+    @objc func onSelectRow(index:Int){
         //构建一个indexPath
         let indexPath = NSIndexPath(row: index, section: 0)
         //选中的效果
@@ -362,7 +362,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     
     //设置歌曲的封面以及背景
-    func onSetImage(url:String){
+    @objc func onSetImage(url:String){
         //        Alamofire.request(Method.GET, url).response { (_, _, data, error) -> Void in
         //            //将获取的数据赋予UIImage
         //            let img = UIImage(data: data!)
@@ -374,12 +374,12 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     
     //播放音乐的方法
-    func onSetAudio(url:String) {
+    @objc func onSetAudio(url:String) {
         audioPlayer.pause()
         
         //let musicURL = NSURL(string: url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
         let musicURL = NSURL(string: url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlFragmentAllowed)!)
-        audioPlayer = AVPlayer(url: musicURL as! URL)
+        audioPlayer = AVPlayer(url: musicURL! as URL)
         audioPlayer.play()
         
         btnPlay.onPlay()
@@ -394,7 +394,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     
     //计时器更新方法
-    func onUpdate(){
+    @objc func onUpdate(){
         // 00:00 获取播放器当前的播放时间
         let c = CMTimeGetSeconds((audioPlayer.currentItem?.currentTime())!)
         if c > 0.0 {
@@ -427,7 +427,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     
     //图片缓存策略方法
-    func onGetCacheImage(url:String,imgView:UIImageView){
+    @objc func onGetCacheImage(url:String,imgView:UIImageView){
         //通过图片地址去缓存中取图片
         let image = self.imageCache[url] as UIImage?
         
@@ -449,7 +449,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         }
     }
     
-    func didRecieveResults(results:AnyObject){
+    @objc func didRecieveResults(results:AnyObject){
         //print("获取到得数据：\(results)")
         let json = JSON(results)
         //判断是否是频道数据
@@ -499,7 +499,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         btnLove.isEnabled = true
     }
     
-    func disableChannelBtn(){
+    @objc func disableChannelBtn(){
         BtnChannel.isEnabled = false
         btnNext.isEnabled = false
         btnOrder.isEnabled = false
@@ -509,7 +509,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         refreshControl.removeFromSuperview()
     }
     
-    func alertmessage(){
+    @objc func alertmessage(){
         self.noticeOnlyText("无网络连接")
         //self.noticeError("无网络连接", autoClear: true, autoClearTime: nil)
     }
@@ -527,7 +527,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     
     //频道列表协议的回调方法
-    func onChangeChannel(channel_id:String){
+    @objc func onChangeChannel(channel_id:String){
         //拼凑频道列表的歌曲数据网络地址
         //http://douban.fm/j/mine/playlist?type=n&channel= 频道id &from=mainsite
         //print(self.channelData)
@@ -535,11 +535,11 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         eHttp.onSearch(url: url)
     }
     
-    func onChangeChannelname(channel_name:String){
+    @objc func onChangeChannelname(channel_name:String){
         channelname.text = channel_name
     }
     
-    func loadLovelist(){
+    @objc func loadLovelist(){
         channelname.text = "我的最爱"
         //let count = dataSource.count
         //print(dataSource)
@@ -557,9 +557,9 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         self.tv.reloadData()
     }
     
-    var dataSource :NSMutableArray = []
+    @objc var dataSource :NSMutableArray = []
     
-    func saveAddWithFile(channelID:String) {
+    @objc func saveAddWithFile(channelID:String) {
         dataSource = readWithFile()
         dataSource.add(channelID)
         // 4、将数据写入文件中
@@ -567,7 +567,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         print("Add:\(dataSource)")
     }
     
-    func saveRemoveWithFile(channelID:String) {
+    @objc func saveRemoveWithFile(channelID:String) {
         dataSource = readWithFile()
         dataSource.remove(channelID)
         // 4、将数据写入文件中
@@ -575,7 +575,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         print("Remove:\(dataSource)")
     }
     
-    func readWithFile() ->NSMutableArray{
+    @objc func readWithFile() ->NSMutableArray{
         let file = NSMutableArray(contentsOfFile: filePath)
         if file != nil{
             dataSource = file!

@@ -9,16 +9,16 @@
 import UIKit
 
 class EkoButton: UIButton {
-    var isPlay:Bool = true
-    let imgPlay:UIImage = UIImage(named: "play")!
-    let imgPause:UIImage = UIImage(named: "pause")!
+    @objc var isPlay:Bool = true
+    @objc let imgPlay:UIImage = UIImage(named: "play")!
+    @objc let imgPause:UIImage = UIImage(named: "pause")!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.addTarget(self, action: #selector(EkoButton.onClick), for: UIControlEvents.touchUpInside)
     }
     
-    func onClick(){
+    @objc func onClick(){
         isPlay = !isPlay
         if isPlay{
             self.setImage(imgPause, for: UIControlState.normal)
@@ -27,7 +27,7 @@ class EkoButton: UIButton {
         }
     }
     
-    func onPlay(){
+    @objc func onPlay(){
         isPlay = true
         self.setImage(imgPause, for: UIControlState.normal)
     }
